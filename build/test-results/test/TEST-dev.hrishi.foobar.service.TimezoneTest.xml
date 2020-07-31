@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.hrishi.foobar.service.TimezoneTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-07-31T09:12:57" hostname="hrishikesh" time="0.089">
+  <properties/>
+  <testcase name="hello test" classname="dev.hrishi.foobar.service.TimezoneTest" time="0.089"/>
+  <system-out><![CDATA[run test]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,44 @@
+plugins {
+    id 'java-gradle-plugin'
+    id 'groovy'
+    id 'maven-publish'
+}
+
+group 'dev.hrishi'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java-gradle-plugin'
+apply plugin: 'groovy'
+apply plugin: 'maven-publish'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+gradlePlugin {
+    plugins {
+        simplePlugin {
+            id = 'dev.hrishi.foobar'
+            implementationClass = 'dev.hrishi.foobar.MainPlugin'
+        }
+    }
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = group
+            artifactId = 'foobar-plugin'
+            version = version
+        }
+    }
+}
+
+dependencies {
+    testCompile group: 'org.objenesis', name: 'objenesis', version: '3.1'
+    testCompile group: 'cglib', name: 'cglib-nodep', version: '3.3.0'
+    testCompile 'org.spockframework:spock-core:1.3-groovy-2.5', {
+        exclude module: 'groovy-all'
+    }
+}
